@@ -1,0 +1,59 @@
+
+
+<section class="login h-[95%] w-[26%] bg-[#000] rounded-2xl p-4">
+    <div class="w-full h-[50px]">
+        <img src="" alt="">
+    </div>
+    <div>
+        <form action="" class="flex flex-col justify-center">
+            <h1 class="font-bold text-4xl text-white m-3">Crear Cuenta</h1>
+            <div class="flex flex-col text-white items-center m-1.5">
+                <div class="w-full m-1.5">
+                    <label for="email" class="text-xl">Nombre</label>
+                </div>
+                    <input type="text" required id="username" class=" p-1 w-[90%] border-b outline-none">
+            </div>
+            <div class="flex flex-col text-white items-center m-1.5">
+                <div class="w-full m-1.5">
+                    <label for="email" class="text-xl">Direccion de email</label>
+                </div>
+                    <input type="email" required id="email" placeholder="example@gmail.com" class="placeholder-[#89CFF0] p-1 w-[90%] border-b outline-none">
+            </div>
+            <div class="flex flex-col text-white items-center m-1.5">
+                <div class="w-full m-1.5">
+                    <label for="email" class="text-xl">Contraseña</label>
+                </div>
+                    <input type="password" required id="password" class=" p-1 w-[90%] border-b outline-none">
+                    <div class="w-full m-1.5">
+                        <label for="email" class="text-xl">Confirmar Contraseña</label>
+                    </div>
+                        <input type="password" required id="password" class=" p-1 w-[90%] border-b outline-none">
+            </div>
+            <div class="w-[95%] text-[#eee] m-4 p-2">
+                <p>Al identificarte aceptas nuestras <a href="/" class="text-sky-800 underline">Condiciones de uso y venta</a>. Consulta nuestro <a href="" class="text-sky-800 underline">Aviso de privacidad</a></p>
+            </div>
+            <div class="w-[100%] flex justify-center text-amber-50 mt-[7px]">
+                <button class="w-[70%] p-1  rounded-2xl text-lg font-bold  border border-amber-50">Crear Cuenta</button>
+            </div>
+            <div class="flex items-center gap-4 mt-[20px]">
+                <div class="flex-grow border-t border-gray-400/30"></div>
+                <span class="text-gray-600">¿Ya tienes cuenta?</span>
+                <div class="flex-grow border-t border-gray-400/30"></div>
+            </div>
+            <div class="w-[100%] flex justify-center text-amber-50 mt-[20px] text-center">
+                <a href="/login" class="w-[90%] p-1  rounded-2xl text-xl font-bold  border border-amber-50">Iniciar Sesión</a>
+            </div>
+            
+        </form>
+    </div>
+</section>
+
+<style>
+@media screen and (max-width: 560px) {
+    .login{
+        width: 90%;
+        height: 100%;
+    }
+}
+</style>
+
