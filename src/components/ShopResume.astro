@@ -1,0 +1,47 @@
+<section class=" flex flex-col w-full min-h-[500px]">
+    <div id="cart-container" class="h-auto flex flex-row w-full"></div>
+</section>
+<button id="empty-cart-btn">Vaciar Carrito</button>
+
+<script>
+const cartContainer = document.getElementById("cart-container");
+const emptyCartBtn = document.getElementById("empty-cart-btn");
+
+const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+if (cart.length === 0) {
+    cartContainer.innerHTML = "<p>El carrito está vacío.</p>";
+    emptyCartBtn.style.display = "none"; 
+} else {
+
+    cart.forEach(product => {
+        const productDiv = document.createElement("div");
+            productDiv.innerHTML = `
+            <p>Nombre: ${product.name}</p>
+            <p>Categoría: ${product.category}</p>
+            <p>Precio: $${product.price}</p>
+            <p>Cantidad: ${product.quantity}</p>
+            <img src="${product.image}" alt="${product.name}" width="100" />
+            <hr />
+        `;
+        productDiv.classList.add("productsList");
+        cartContainer.appendChild(productDiv);
+        
+    });
+}
+
+const emptyCart = () => {
+    localStorage.removeItem("cart");
+    cartContainer.innerHTML = "<p>El carrito está vacío.</p>";
+    emptyCartBtn.style.display = "none";
+};
+
+emptyCartBtn.addEventListener("click", emptyCart);
+</script>
+
+<style>
+    .productsList{
+        width: 100%;
+        background-color: aquamarine;
+    }
+</style>

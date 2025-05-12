@@ -1,0 +1,43 @@
+---
+import userData from '../utils/userData';
+import type {User} from '../utils/userData';
+import UserOption from './UserOption.astro';
+
+
+interface Props{
+    user?:User
+}
+
+const {user=userData}= Astro.props
+---
+
+<section class="w-full h-full my-[10px] flex items-center justify-around">
+    <div class="flex flex-col w-[30%] h-[400px] bg-black/30 backdrop-blur-2xl p-3 rounded-4xl justify-center">
+        <div class="relative w-full flex flex-col justify-center items-center">
+
+            <div class="relative w-[200px] h-[200px]">
+                <img src={user.perfil} alt="" class="rounded-full w-full h-full object-cover" />
+                <button class="absolute bottom-2 right-2 rounded-full border border-white bg-white w-10 h-10 flex items-center justify-center text-black text-xl shadow hover:bg-[#000] hover:text-white transition-colors duration-300">
+                    <ion-icon name="create-outline"></ion-icon>
+                </button>
+            </div>
+            <div class="w-full text-white h-auto text-center my-[5px]  font-semibold">
+                <h3 class="text-2xl">Hola {user.name}</h3>
+                <span>{user.email}</span>
+            </div>
+            <a href="/login" class="border border-[#fff] p-2 w-[200px] text-lg text-[#ddd] text-center rounded-xl mt-4 hover:bg-[#ddd] hover:text-black transition-colors duration-300">Cerrar sesión</a>
+        </div>
+    </div>
+    <div class="flex flex-col w-[60%] h-[90%] bg-black/40 backdrop-blur-2xl p-4 items-center justify-center gap-4 rounded-2xl">
+        <h3 class="text-4xl text-white font-semibold mb-4">
+            Opciones de cuenta.
+        </h3>
+        <UserOption user={user} title="Opciones del usuario" />
+
+    </div>
+
+</section>
+
+
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

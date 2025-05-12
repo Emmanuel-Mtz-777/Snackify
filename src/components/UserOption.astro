@@ -1,0 +1,88 @@
+---
+
+import type { User } from '../utils/userData';
+
+interface Props {
+  user: User;
+  title: string;
+}
+
+const { title, user } = Astro.props;
+
+---
+
+<div class="w-[80%] text-white rounded-2xl p-2 flex flex-col" data-accordion>
+  <details class="w-full group bg-[#1e1e1e] overflow-hidden transition-all duration-500 ease-in-out my-2 rounded-xl p-[12px]">
+    <summary class="flex justify-between items-center cursor-pointer list-none text-xl">
+      <h3 class="font-semibold text-2xl"><ion-icon name="location-outline"></ion-icon>Direccion de envio</h3>
+      <ion-icon name="caret-forward-outline" class="transition-transform duration-300 group-open:rotate-90 text-3xl"></ion-icon>
+    </summary>
+    <div class="pl-8 group-open:max-h-40 overflow-hidden transition-all duration-500 ease-in-out">
+      <p>{user.direccion}</p>
+      <div class="w-full flex justify-between my-[10px]">
+        <a href="" class="border p-1 w-[200px] rounded-2xl text-center hover:bg-black hover:font-semibold">Cambiar dirección</a>
+        <a href="" class="border p-1 w-[200px] rounded-2xl text-center text-red-500 bg-[#0c0a0a] hover:bg-white hover:text-black hover:font-semibold">Eliminar dirección</a>
+      </div>
+      
+    </div>
+  </details>
+  <details class="w-full group bg-[#1e1e1e]  transition-all duration-500 ease-in-out my-2 rounded-xl p-[12px]">
+    <summary class="flex justify-between items-center cursor-pointer list-none text-xl">
+      <h3 class="font-semibold text-2xl px-1"><ion-icon name="cash-outline"></ion-icon>Métodos de pago</h3>
+      <ion-icon name="caret-forward-outline" class="transition-transform duration-300 group-open:rotate-90 text-3xl">
+    </summary>
+    <div class="pl-8 group-open:max-h-40 overflow-hidden transition-all duration-500 ease-in-out">
+      <div class="w-full flex gap-4 my-2">
+        <div class="w-1/2 flex flex-col h-[150px] border p-2 rounded-2xl bg-gray-200 relative">
+          <div class="w-full  flex  justify-between">
+            <h3 class="text-xl text-black">{user.tarjeta.numero}</h3>
+            <img src={user.tarjeta.logo} alt={`Logo de ${user.tarjeta.tipo}`} class="w-[60px]">
+          </div>
+          <div class="w-[100px] absolute bottom-[25%] left-[20px] text-black font-semibold"> 
+            <span>{`CVV: ${user.tarjeta.cvv}`}</span>
+          </div>
+          <div class="w-[100px] absolute bottom-[20px] right-[20px] text-black font-semibold"> 
+            <span>{`Exp: ${user.tarjeta.expiration}`}</span>
+          </div>
+        </div>
+        <div class="w-1/2 flex justify-center items-center h-[150px] border p-2 rounded-2xl bg-gray-600/30 border-gray-500">
+            <h3 class="text-xl"><ion-icon name="add-circle-outline"></ion-icon>Añadir tarjeta</h3>
+        </div>
+      </div>
+      
+    </div>
+  </details>
+
+  <details class="w-full group bg-[#1e1e1e] overflow-hidden transition-all duration-500 ease-in-out my-2 rounded-xl p-[12px]">
+    <summary class="flex justify-between items-center cursor-pointer list-none text-xl">
+      <h3 class="font-semibold text-2xl px-1"><ion-icon name="person-outline"></ion-icon>Opciones de cuenta</h3>
+      <ion-icon name="caret-forward-outline" class="transition-transform duration-300 group-open:rotate-90 text-3xl">
+    </summary>
+    <div class="pl-8 group-open:max-h-40 overflow-hidden transition-all duration-500 ease-in-out flex w-full p-2 justify-between">
+      <a href="" class="border p-1 w-[150px] rounded-2xl text-center text-white bg-[#0c0a0a] hover:bg-white hover:text-black hover:font-semibold my-[10px]">Editar Datos</a>
+      <a href="" class="border p-1 w-[150px] rounded-2xl text-center text-red-500 bg-[#0c0a0a] hover:bg-white hover:text-black hover:font-semibold my-[10px]"> Eliminar cuenta</a>
+    </div>
+  </details>
+</div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const accordions = document.querySelectorAll('[data-accordion]');
+    accordions.forEach((accordion) => {
+      const details = accordion.querySelectorAll('details');
+      
+      details.forEach((detail) => {
+        detail.addEventListener('toggle', () => {
+          if (detail.open) {
+            details.forEach((otherDetail) => {
+              if (otherDetail !== detail) {
+                otherDetail.removeAttribute('open');
+              }
+            });
+          }
+        });
+      });
+    });
+  });
+</script>

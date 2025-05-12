@@ -1,9 +1,14 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../../public/Img/Icons/logo.webp';
+---
+
 <header>
     <nav class="navBar">
         <div class="logo">
             <a href="/">
                 <div class="flex">
-                    <img src="/Img/Icons/logo.webp" alt="Logo de snackify">
+                    <Image src={logo} alt="Logo de Snackify" />
                     <h2 class="logo">Snackify</h2>
                 </div>
             </a>
@@ -12,7 +17,7 @@
         <div class="group">
             <ul class="navigation">
                 <li><div class="flex items-center">
-                    <a href="" id="account" class="options">Mi cuenta </a>
+                    <a href="/user" id="account" class="options">Mi cuenta </a>
                     <a href="" id="account"><ion-icon class="icons" name="person-circle-outline"></ion-icon></a>
                     </div>
                 </li>
@@ -22,7 +27,7 @@
                     </div>
                 </li>
                 <li><div class="flex items-center">
-                    <a href="" id="shopCar" class="options">Carrito </a>
+                    <a href="/shopCar" id="shopCar" class="options">Carrito </a>
                     <a href="" id="shopCar"><ion-icon class="icons" name="cart-outline"></ion-icon></a>
                     </div>
                 </li>

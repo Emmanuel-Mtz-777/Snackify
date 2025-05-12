@@ -5,6 +5,7 @@ import CategoryBar from "../components/CategoryBar.astro";
 import Banner from '../components/Banner.astro'
 import productsData from '../utils/productsData';
 import ProductCards from "../components/ProductCards.astro";
+import SearchInput from "../components/SearchInput.astro";
 
 const products = productsData;
 ---
@@ -12,8 +13,11 @@ const products = productsData;
 <Principal>
 	<CategoryBar/>
 	<Banner/>
-	<main class="bg-[#c0c0c0] w-full flex flex-col items-center px-4">
-		<h2 class="text-4xl font-semibold m-5">Nuestras selecciones de hoy para ti.</h2>
+	<main class="w-full bg-[#1e1f27fe] flex flex-col items-center px-4 min-h-[500px]">
+		<div class="flex w-[80%] justify-between">
+			<h2 class="text-4xl text-[#ddd] font-semibold m-5">Nuestras selecciones ti.</h2>
+			<SearchInput/>
+		</div>
 		<ProductCards products={products} />
 	</main>
 

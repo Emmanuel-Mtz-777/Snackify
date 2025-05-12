@@ -5,11 +5,26 @@ import SignUpForm from "../components/SignUpForm.astro";
 ---
 
 <Layout>
-	<main class="bg-[#0D0F1A] w-full h-full flex justify-center items-center" >
+	<main class=" w-full min-h-screen flex justify-center items-center" >
         <SignUpForm/>
     </main>
 </Layout>
 
-<script>
-    
-</script>
+
+
+<style>
+
+main {
+    background-color: #000;
+    background-image: 
+        linear-gradient(rgba(20, 18, 18, 0.4), rgba(0, 0, 0, 0.1)), 
+        url("/Img/Icons/descarga.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+
+</style>
