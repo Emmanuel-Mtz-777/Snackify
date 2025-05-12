@@ -1,37 +1,142 @@
 const productsData = [
     // Chocolatería
-    { id: 1, name: 'Chocolate Amargo', category: 'Chocolatería', price: 50, image: '/img/chocolate1.jpg' },
-    { id: 2, name: 'Trufas Clásicas', category: 'Chocolatería', price: 60, image: '/img/chocolate2.jpg' },
-    { id: 3, name: 'Tableta de Cacao 70%', category: 'Chocolatería', price: 45, image: '/img/chocolate3.jpg' },
-    { id: 4, name: 'Chocolate con Almendras', category: 'Chocolatería', price: 55, image: '/img/chocolate4.jpg' },
-    { id: 5, name: 'Barras Rellenas', category: 'Chocolatería', price: 48, image: '/img/chocolate5.jpg' },
-    { id: 6, name: 'Chocolate Blanco', category: 'Chocolatería', price: 52, image: '/img/chocolate6.jpg' },
-    { id: 7, name: 'Chocolate con Naranja', category: 'Chocolatería', price: 53, image: '/img/chocolate7.jpg' },
-    { id: 8, name: 'Chocolate con Menta', category: 'Chocolatería', price: 50, image: '/img/chocolate8.jpg' },
-    { id: 9, name: 'Chocolate Artesanal', category: 'Chocolatería', price: 70, image: '/img/chocolate9.jpg' },
-    { id: 10, name: 'Bombones de Chocolate', category: 'Chocolatería', price: 62, image: '/img/chocolate10.jpg' },
-    { id: 11, name: 'Mini Trufas', category: 'Chocolatería', price: 40, image: '/img/chocolate11.jpg' },
-    { id: 12, name: 'Chocotejas', category: 'Chocolatería', price: 65, image: '/img/chocolate12.jpg' },
-    { id: 13, name: 'Chocolate con Fresa', category: 'Chocolatería', price: 58, image: '/img/chocolate13.jpg' },
-    { id: 14, name: 'Chocolate con Café', category: 'Chocolatería', price: 60, image: '/img/chocolate14.jpg' },
-    { id: 15, name: 'Chocolate con Pistache', category: 'Chocolatería', price: 63, image: '/img/chocolate15.jpg' },
+  {
+    id: 1,
+    name: 'Chocolate Amargo',
+    category: 'Chocolatería',
+    price: 50,
+    image: '/Img/Products/Chocolateria/Chocolate_Amargo.webp',
+    description: 'Nuestro Chocolate Amargo es una delicia intensa elaborada con un alto porcentaje de cacao puro, ideal para los verdaderos amantes del chocolate. Su sabor profundo, con notas sutiles de frutos secos y una textura firme que se derrite lentamente en el paladar, lo convierte en la elección perfecta para quienes buscan una experiencia sensorial sofisticada y sin azúcares añadidos.'
+  },
+  {
+    id: 2,
+    name: 'Trufas Clásicas',
+    category: 'Chocolatería',
+    price: 60,
+    image: '/Img/Products/Chocolateria/Trufas_Clasicas.webp',
+    description: 'Las Trufas Clásicas son pequeñas obras maestras hechas a mano con una mezcla perfecta de ganache suave y cobertura de chocolate amargo espolvoreada con cacao en polvo. Cada bocado es una explosión de sabor cremoso y profundo, que ofrece una experiencia de lujo para los sentidos. Perfectas para regalar o para disfrutar en un momento de indulgencia personal.'
+  },
+  {
+    id: 3,
+    name: 'Tableta de Cacao 70%',
+    category: 'Chocolatería',
+    price: 45,
+    image: '/Img/Products/Chocolateria/Tableta-de-Cacao.webp',
+    description: 'La Tableta de Cacao 70% es un equilibrio perfecto entre amargor y dulzura, ideal para quienes buscan una experiencia auténtica del cacao. Con ingredientes seleccionados de origen sostenible, esta tableta es rica en antioxidantes, con un aroma profundo y una textura suave que se funde delicadamente en la boca.'
+  },
+  {
+    id: 4,
+    name: 'Chocolate con Almendras',
+    category: 'Chocolatería',
+    price: 55,
+    image: '/Img/Products/Chocolateria/Chocolate-con-Almendras.webp',
+    description: 'Disfruta de la combinación perfecta entre el sabor del chocolate oscuro y la textura crujiente de almendras tostadas. Esta barra está elaborada con ingredientes de alta calidad y ofrece un contraste delicioso que deleita a cualquier paladar. Un clásico que nunca falla.'
+  },
+  {
+    id: 5,
+    name: 'Barras Rellenas',
+    category: 'Chocolatería',
+    price: 48,
+    image: '/Img/Products/Chocolateria/Barras Rellenas.webp',
+    description: 'Nuestras Barras Rellenas son una experiencia multisensorial: una capa exterior de chocolate liso y brillante que envuelve un corazón suave y cremoso. Disponibles en una variedad de sabores como avellana, caramelo o fresa, son perfectas para quienes buscan algo más que una barra común.'
+  },
+  {
+    id: 6,
+    name: 'Chocolate Blanco',
+    category: 'Chocolatería',
+    price: 52,
+    image: '/Img/Products/Chocolateria/Chocolate_Blanco.webp',
+    description: 'El Chocolate Blanco es una delicia cremosa y suave, con un toque de vainilla natural que resalta su dulzura característica. Elaborado con manteca de cacao de alta pureza, este chocolate ofrece una textura sedosa ideal para los más golosos.'
+  },
+  {
+    id: 7,
+    name: 'Chocolate con Naranja',
+    category: 'Chocolatería',
+    price: 53,
+    image: '/Img/Products/Chocolateria/Chocolate con naranja.webp',
+    description: 'Esta barra combina el intenso sabor del chocolate oscuro con la frescura cítrica de la naranja. El resultado es un equilibrio elegante entre dulzura y acidez, ideal para quienes buscan una experiencia diferente y sofisticada en cada mordida.'
+  },
+  {
+    id: 8,
+    name: 'Chocolate con Menta',
+    category: 'Chocolatería',
+    price: 50,
+    image: '/Img/Products/Chocolateria/Chocomenta.webp',
+    description: 'Nuestro Chocolate con Menta ofrece una sensación refrescante única, combinando el profundo sabor del chocolate oscuro con la frescura natural de la menta. Perfecto como digestivo o simplemente para disfrutar de un gusto diferente que limpia el paladar.'
+  },
+  {
+    id: 9,
+    name: 'Chocolate Artesanal',
+    category: 'Chocolatería',
+    price: 70,
+    image: '/Img/Products/Chocolateria/Chocolate Artesanal.webp',
+    description: 'Elaborado a mano con técnicas tradicionales y cacao de origen ético, nuestro Chocolate Artesanal es una verdadera joya culinaria. Cada pieza refleja la pasión y el cuidado en su proceso, logrando un sabor único que no encontrarás en productos industriales.'
+  },
+  {
+    id: 10,
+    name: 'Bombones de Chocolate',
+    category: 'Chocolatería',
+    price: 62,
+    image: '/Img/Products/Chocolateria/Bombones_de_Chocolate.webp',
+    description: 'Estos bombones están rellenos con los más deliciosos sabores, desde frutas hasta licores, y cubiertos con una delicada capa de chocolate. Ideales para regalar o disfrutar en momentos especiales, su textura y sabor te conquistarán desde el primer bocado.'
+  },
+  {
+    id: 11,
+    name: 'Mini Trufas',
+    category: 'Chocolatería',
+    price: 40,
+    image: '/Img/Products/Chocolateria/Mini_Trufas.webp',
+    description: 'Pequeñas pero poderosas, nuestras Mini Trufas ofrecen el mismo sabor y suavidad de una trufa clásica, en un tamaño perfecto para disfrutar sin culpa. Ideales para compartir o como un detalle gourmet.'
+  },
+  {
+    id: 12,
+    name: 'Chocotejas',
+    category: 'Chocolatería',
+    price: 65,
+    image: '/Img/Products/Chocolateria/Chocotejas.webp',
+    description: 'Desde Perú traemos las auténticas Chocotejas: bombones artesanales rellenos de manjar blanco, frutas confitadas o nueces, cubiertos con una capa gruesa de chocolate oscuro. Una explosión de tradición y sabor en cada pieza.'
+  },
+  {
+    id: 13,
+    name: 'Chocolate con Fresa',
+    category: 'Chocolatería',
+    price: 58,
+    image: '/Img/Products/Chocolateria/Chocolate_con_Fresa.webp',
+    description: 'Nuestro Chocolate con Fresa combina el dulzor del chocolate con la acidez natural de las fresas liofilizadas. Es una fusión ideal para quienes aman los contrastes suaves y afrutados.'
+  },
+  {
+    id: 14,
+    name: 'Chocolate con Café',
+    category: 'Chocolatería',
+    price: 60,
+    image: '/Img/Products/Chocolateria/Chocolate_con_Cafe.webp',
+    description: 'Una combinación estimulante y deliciosa. El Chocolate con Café fusiona granos de café tostados con cacao de alta calidad, ofreciendo un sabor intenso, amargo y aromático que encantará a los más cafeteros.'
+  },
+  {
+    id: 15,
+    name: 'Chocolate con Pistache',
+    category: 'Chocolatería',
+    price: 63,
+    image: '/Img/Products/Chocolateria/Chocolate_con_Pistache.webp',
+    description: 'El sabor tostado y salado del pistache se une al dulzor del chocolate para crear una experiencia crujiente, equilibrada y adictiva. Ideal para los amantes de las nueces y de los sabores gourmet.'
+  },
 
     // Dulces
-    { id: 16, name: 'Gomitas de Fruta', category: 'Dulces', price: 20, image: '/img/dulce1.jpg' },
-    { id: 17, name: 'Caramelos Surtidos', category: 'Dulces', price: 18, image: '/img/dulce2.jpg' },
-    { id: 18, name: 'Paletas de Sabores', category: 'Dulces', price: 15, image: '/img/dulce3.jpg' },
-    { id: 19, name: 'Dulces Picantes', category: 'Dulces', price: 22, image: '/img/dulce4.jpg' },
-    { id: 20, name: 'Tamarindo', category: 'Dulces', price: 19, image: '/img/dulce5.jpg' },
-    { id: 21, name: 'Pulparindo', category: 'Dulces', price: 21, image: '/img/dulce6.jpg' },
-    { id: 22, name: 'Mazapán', category: 'Dulces', price: 23, image: '/img/dulce7.jpg' },
-    { id: 23, name: 'Rollitos de Fruta', category: 'Dulces', price: 17, image: '/img/dulce8.jpg' },
-    { id: 24, name: 'Chicles', category: 'Dulces', price: 10, image: '/img/dulce9.jpg' },
-    { id: 25, name: 'Dulces de Leche', category: 'Dulces', price: 25, image: '/img/dulce10.jpg' },
-    { id: 26, name: 'Dulces Ácidos', category: 'Dulces', price: 18, image: '/img/dulce11.jpg' },
-    { id: 27, name: 'Pastillas de Menta', category: 'Dulces', price: 14, image: '/img/dulce12.jpg' },
-    { id: 28, name: 'Caramelos Rellenos', category: 'Dulces', price: 19, image: '/img/dulce13.jpg' },
-    { id: 29, name: 'Gomitas Ácidas', category: 'Dulces', price: 20, image: '/img/dulce14.jpg' },
-    { id: 30, name: 'Duvalín', category: 'Dulces', price: 12, image: '/img/dulce15.jpg' },
+    { id: 16, name: 'Gomitas de Fruta', category: 'Dulceria', price: 20, image: '/Img/Products/Dulces/Gomitas-de-Fruta.webp' },
+    { id: 17, name: 'Caramelos Surtidos', category: 'Dulceria', price: 78, image: '/Img/Products/Dulces/Caramelo-surtido.webp'},
+    { id: 18, name: 'Paletas de Sabores', category: 'Dulceria', price: 35, image: '/Img/Products/Dulces/paletas_de_sabores.webp' },
+    { id: 19, name: 'Dulces Picantes', category: 'Dulceria', price: 22, image: '/Img/Products/Dulces/Dulces_Picantes.webp' },
+    { id: 20, name: 'Tamarindo Picante', category: 'Dulceria', price: 10, image: '/Img/Products/Dulces/Tamarindo-Picante.webp' },
+    { id: 21, name: 'Pulparindo', category: 'Dulceria', price: 21, image: '/Img/Products/Dulces/Pulparindo.webp' },
+    { id: 22, name: 'Mazapán', category: 'Dulceria', price: 23, image: '/img/dulce7.jpg' },
+    { id: 23, name: 'Rollitos de Fruta', category: 'Dulceria', price: 17, image: '/img/dulce8.jpg' },
+    { id: 24, name: 'Chicles', category: 'Dulceria', price: 10, image: '/img/dulce9.jpg' },
+    { id: 25, name: 'Dulces de Leche', category: 'Dulceria', price: 25, image: '/img/dulce10.jpg' },
+    { id: 26, name: 'Dulces Ácidos', category: 'Dulceria', price: 18, image: '/img/dulce11.jpg' },
+    { id: 27, name: 'Pastillas de Menta', category: 'Dulceria', price: 14, image: '/img/dulce12.jpg' },
+    { id: 28, name: 'Caramelos Rellenos', category: 'Dulceria', price: 19, image: '/img/dulce13.jpg' },
+    { id: 29, name: 'Gomitas Ácidas', category: 'Dulceria', price: 20, image: '/img/dulce14.jpg' },
+    { id: 30, name: 'Duvalín', category: 'Dulceria', price: 12, image: '/img/dulce15.jpg' },
 
     // Postres
     { id: 31, name: 'Cheesecake', category: 'Postres', price: 85, image: '/img/postre1.jpg' },
