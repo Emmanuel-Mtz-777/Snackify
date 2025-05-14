@@ -22,29 +22,33 @@ if (!product) {
 <Principal>
 	<CategoryBar/>
 	
-	<main class="bg-gradient-to-b from-[#1e1f27fe] to-[#4b4c59c1] w-full flex flex-col items-center px-4">
-    <div class="w-[80%] flex justify-between h-[500px] bg-[#00000095] my-[10px] rounded-xl relative">
-      <div class="w-[40%] flex justify-center h-full items-center bg-gradient-to-b from-[#0f0f0f] via-[#1c1c1c] to-[#2a2a2a] rounded-xl shadow-[0_0_10px_#ffffff40]">
-        <img src={product.image} alt={product.name} class="h-[400px] w-auto"/>
-      </div>
-      <div class="w-[60%] flex flex-col text-[#ddd] items-center justify-center h-full">
-        <div class="w-[80%] h-[90%]">
-        <h1 class="text-5xl font-bold " >{product.name}</h1>
-        <p class="text-xl font-semibold my-[30px]">Categoría: {product.category}</p>
-          <div class="w-[80%] h-[200px] flex justify-center items-center bg-gradient-to-r">
-          <p class="text-lg">{product.description}</p>
-          </div>
-          <div class="absolute bottom-[50px] w-[50%] flex justify-between items-center">
-            <p class="text-xl font-semibold">Precio:${product.price}</p>
-            <button class="text-xl border p-2 rounded-xl transition duration-200 hover:bg-white hover:text-black ">Añadir al carrito</button>
-          </div>
+	<main class="bg-gradient-to-b from-[#1e1f27fe] to-[#4b4c59c1] w-full min-h-screen flex flex-col justify-center items-center px-4 py-6">
+  <div class="w-full sm:w-[80%] flex flex-col sm:flex-row bg-[#00000095] rounded-xl overflow-hidden shadow-lg">
+    
+    <!-- Imagen -->
+    <div class="w-full sm:w-[40%] flex justify-center items-center bg-gradient-to-b from-[#0f0f0f] via-[#1c1c1c] to-[#2a2a2a] p-4">
+      <img src={product.image} alt={product.name} class="h-[200px] w-auto sm:w-[350px] sm:h-[400px] object-contain"/>
+    </div>
 
+    <!-- Contenido -->
+    <div class="w-full sm:w-[60%] text-[#ddd] flex flex-col items-center justify-between p-4 gap-4">
+      <div class="w-full">
+        <h1 class="text-3xl sm:text-5xl font-bold mb-2 text-center">{product.name}</h1>
+        <p class="text-lg sm:text-xl font-semibold mb-4 text-center">Categoría: {product.category}</p>
+        <div class="w-full p-4 rounded-md">
+          <p class="text-base sm:text-lg">{product.description}</p>
         </div>
-        
+      </div>
+      <div class="w-full flex flex-row justify-between items-center mt-4 gap-4">
+        <p class="text-xl font-semibold">Precio: ${product.price}</p>
+        <button class="text-xl border px-4 py-2 rounded-xl transition duration-200 hover:bg-white hover:text-black">
+          Añadir al carrito
+        </button>
       </div>
     </div>
-    
-  </main>
+
+  </div>
+</main>
+
 
 </Principal>
-

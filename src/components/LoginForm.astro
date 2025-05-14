@@ -28,7 +28,9 @@ import logo from '../../public/Img/Icons/logo.webp';
       <p>Al identificarte aceptas nuestras <a href="/" class="text-sky-500 underline">Condiciones de uso y venta</a>. Consulta nuestro <a href="/" class="text-sky-500 underline">Aviso de privacidad</a>.</p>
     </div>
 
-    <button type="submit" class="w-[80%] py-2 rounded-2xl text-lg font-bold text-amber-50 border border-amber-50 hover:bg-amber-50 hover:text-black transition"><a href="/">Iniciar Session</a></button>
+    <button type="submit" class="w-[80%] py-2 rounded-2xl text-lg font-bold text-amber-50 border border-amber-50 hover:bg-amber-50 hover:text-black transition">
+      Iniciar Sesión
+    </button>
 
     <div class="w-full text-right">
       <a href="/" class="text-[#eee] text-sm">¿Has olvidado la contraseña?</a>
@@ -56,3 +58,12 @@ import logo from '../../public/Img/Icons/logo.webp';
     }
   }
 </style>
+
+<script>
+  document.querySelector('form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  // Aquí puedes agregar tu lógica de validación si es necesario
+  window.location.href = "/";  // Redirige al índice (página de inicio)
+});
+
+</script>
