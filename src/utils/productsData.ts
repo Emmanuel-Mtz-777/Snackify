@@ -8,6 +8,14 @@ const productsData = [
     image: '/Img/Products/Chocolateria/Chocolate_Amargo.webp',
     description: 'Nuestro Chocolate Amargo es una delicia intensa elaborada con un alto porcentaje de cacao puro, ideal para los verdaderos amantes del chocolate. Su sabor profundo, con notas sutiles de frutos secos y una textura firme que se derrite lentamente en el paladar, lo convierte en la elección perfecta para quienes buscan una experiencia sensorial sofisticada y sin azúcares añadidos.'
   },
+    {
+    id: 63,
+    name: 'Malvaviscos Surtidos',
+    category: 'Malvaviscos',
+    price: 22,
+    image: '/Img/Products/Malvaviscos/Malvaviscos_Surtidos.webp',
+    description: 'Una verdadera fiesta de colores y sabores. Los Malvaviscos Surtidos son perfectos para quienes disfrutan de la variedad y la sorpresa en cada bocado. Esta presentación incluye malvaviscos de distintos sabores frutales como fresa, naranja, limón y vainilla, todos elaborados con una textura suave y una apariencia atractiva. Son ideales para reuniones, piñatas, mesas de dulces y celebraciones en general. También pueden ser utilizados en repostería creativa, ya que sus colores vivos y formas variadas los convierten en el ingrediente perfecto para añadir alegría y dulzura a cualquier creación culinaria.'
+  },
   {
     id: 2,
     name: 'Trufas Clásicas',
@@ -23,6 +31,30 @@ const productsData = [
     price: 45,
     image: '/Img/Products/Chocolateria/Tableta-de-Cacao.webp',
     description: 'La Tableta de Cacao 70% es un equilibrio perfecto entre amargor y dulzura, ideal para quienes buscan una experiencia auténtica del cacao. Con ingredientes seleccionados de origen sostenible, esta tableta es rica en antioxidantes, con un aroma profundo y una textura suave que se funde delicadamente en la boca.'
+  },
+  {
+    id: 31,
+    name: 'Cheesecake',
+    category: 'Postres',
+    price: 85,
+    image: '/Img/Products/Postres/Cheesecake.webp',
+    description: 'Delicioso cheesecake con base de galleta crujiente y un suave relleno de queso crema, coronado con una capa de mermelada de frutas rojas. Perfecto para los amantes de los sabores cremosos y dulces.'
+  },
+  {
+    id: 32,
+    name: 'Pastel de Chocolate',
+    category: 'Postres',
+    price: 90,
+    image: '/Img/Products/Postres/Pastel de chocolate.webp',
+    description: 'Pastel húmedo y esponjoso elaborado con chocolate de alta calidad, cubierto con ganache y decorado con virutas de cacao. Una experiencia intensa para los fanáticos del chocolate.'
+  },
+  {
+    id: 33,
+    name: 'Brownie',
+    category: 'Postres',
+    price: 60,
+    image: '/Img/Products/Postres/brownie.webp',
+    description: 'Brownie denso y suave con una textura perfecta entre bizcocho y caramelo, con trozos de nuez y un profundo sabor a chocolate. Ideal para acompañar con helado o café.'
   },
   {
     id: 4,
@@ -97,6 +129,22 @@ const productsData = [
     description: 'Desde Perú traemos las auténticas Chocotejas: bombones artesanales rellenos de manjar blanco, frutas confitadas o nueces, cubiertos con una capa gruesa de chocolate oscuro. Una explosión de tradición y sabor en cada pieza.'
   },
   {
+  id: 47,
+  name: 'Cuernito',
+  category: 'Panaderia',
+  price: 15,
+  image: '/Img/Products/Panaderia/cuernito.webp',
+  description: 'El cuernito es un pan ligero, dorado y ligeramente dulce, cuya forma de media luna le da su nombre. Aunque puede parecer simple, su sabor suave y su textura esponjosa lo convierten en un favorito para acompañar café, leche o incluso relleno con jamón y queso. Su versatilidad lo hace ideal tanto para desayunos como para meriendas, y es el tipo de pan que siempre alegra ver en la mesa.'
+},
+{
+  id: 48,
+  name: 'Pan de Muerto',
+  category: 'Panaderia',
+  price: 20,
+  image: '/Img/Products/Panaderia/pan-de-muerto.webp',
+  description: 'Este pan es mucho más que un alimento: es una tradición viva que honra a los que ya no están. Su forma adornada con figuras que representan huesos, su aroma a azahar y su sabor dulce lo convierten en una experiencia sensorial única. Se prepara especialmente durante el Día de Muertos, y simboliza el ciclo de la vida y la muerte. Compartir un pan de muerto es compartir memoria, cariño y cultura.'
+},
+  {
     id: 13,
     name: 'Chocolate con Fresa',
     category: 'Chocolatería',
@@ -154,30 +202,7 @@ const productsData = [
 ,
 
     // Postres
-  {
-    id: 31,
-    name: 'Cheesecake',
-    category: 'Postres',
-    price: 85,
-    image: '/Img/Products/Postres/Cheesecake.webp',
-    description: 'Delicioso cheesecake con base de galleta crujiente y un suave relleno de queso crema, coronado con una capa de mermelada de frutas rojas. Perfecto para los amantes de los sabores cremosos y dulces.'
-  },
-  {
-    id: 32,
-    name: 'Pastel de Chocolate',
-    category: 'Postres',
-    price: 90,
-    image: '/Img/Products/Postres/Pastel de chocolate.webp',
-    description: 'Pastel húmedo y esponjoso elaborado con chocolate de alta calidad, cubierto con ganache y decorado con virutas de cacao. Una experiencia intensa para los fanáticos del chocolate.'
-  },
-  {
-    id: 33,
-    name: 'Brownie',
-    category: 'Postres',
-    price: 60,
-    image: '/Img/Products/Postres/brownie.webp',
-    description: 'Brownie denso y suave con una textura perfecta entre bizcocho y caramelo, con trozos de nuez y un profundo sabor a chocolate. Ideal para acompañar con helado o café.'
-  },
+  
   {
     id: 34,
     name: 'Flan Napolitano',
@@ -284,22 +309,7 @@ const productsData = [
   image: '/Img/Products/Panaderia/concha.webp',
   description: 'La concha es sin duda el pan dulce más representativo de la panadería mexicana. Su masa esponjosa y ligeramente dulce se combina con una cubierta crujiente y azucarada que puede ser de vainilla, chocolate o fresa. Este pan no solo es un desayuno tradicional, sino un ícono cultural que despierta recuerdos de la infancia, de tardes acompañadas con chocolate caliente, y de charlas familiares en la cocina. Cada mordida es una mezcla de textura y sabor que te hace sentir en casa.'
 },
-{
-  id: 47,
-  name: 'Cuernito',
-  category: 'Panaderia',
-  price: 15,
-  image: '/Img/Products/Panaderia/cuernito.webp',
-  description: 'El cuernito es un pan ligero, dorado y ligeramente dulce, cuya forma de media luna le da su nombre. Aunque puede parecer simple, su sabor suave y su textura esponjosa lo convierten en un favorito para acompañar café, leche o incluso relleno con jamón y queso. Su versatilidad lo hace ideal tanto para desayunos como para meriendas, y es el tipo de pan que siempre alegra ver en la mesa.'
-},
-{
-  id: 48,
-  name: 'Pan de Muerto',
-  category: 'Panaderia',
-  price: 20,
-  image: '/Img/Products/Panaderia/pan-de-muerto.webp',
-  description: 'Este pan es mucho más que un alimento: es una tradición viva que honra a los que ya no están. Su forma adornada con figuras que representan huesos, su aroma a azahar y su sabor dulce lo convierten en una experiencia sensorial única. Se prepara especialmente durante el Día de Muertos, y simboliza el ciclo de la vida y la muerte. Compartir un pan de muerto es compartir memoria, cariño y cultura.'
-},
+
 {
   id: 49,
   name: 'Oreja',
@@ -415,14 +425,7 @@ const productsData = [
     image: '/Img/Products/Malvaviscos/malvaviscos_fresa.webp',
     description: 'Con un delicado aroma y un sabor intensamente frutal, los Malvaviscos Sabor Fresa ofrecen una experiencia gustativa que deleita todos los sentidos. Estos malvaviscos han sido cuidadosamente formulados para capturar la esencia natural de la fresa en cada bocado, ofreciendo una textura tierna que se deshace en la boca. Son ideales para decorar postres, cupcakes, y mesas de dulces, aportando un toque de color y sabor irresistible. Además, su vibrante presentación los convierte en una excelente opción para eventos temáticos, regalos personalizados, o simplemente para convertir un día común en una celebración de sabor.'
   },
-  {
-    id: 63,
-    name: 'Malvaviscos Surtidos',
-    category: 'Malvaviscos',
-    price: 22,
-    image: '/Img/Products/Malvaviscos/Malvaviscos_Surtidos.webp',
-    description: 'Una verdadera fiesta de colores y sabores. Los Malvaviscos Surtidos son perfectos para quienes disfrutan de la variedad y la sorpresa en cada bocado. Esta presentación incluye malvaviscos de distintos sabores frutales como fresa, naranja, limón y vainilla, todos elaborados con una textura suave y una apariencia atractiva. Son ideales para reuniones, piñatas, mesas de dulces y celebraciones en general. También pueden ser utilizados en repostería creativa, ya que sus colores vivos y formas variadas los convierten en el ingrediente perfecto para añadir alegría y dulzura a cualquier creación culinaria.'
-  },
+
   {
     id: 64,
     name: 'Malvaviscos Cubiertos de Chocolate',
