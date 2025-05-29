@@ -1,0 +1,52 @@
+---
+import pedidos from '../utils/ordersData';
+import type { Pedido } from '../utils/ordersData';
+
+const { order } = Astro.props;
+
+const enviados = pedidos.filter(p => p.estado === 'enviado');
+const pendientes = pedidos.filter(p => p.estado === 'pendiente');
+const entregados = pedidos.filter(p => p.estado === 'entregado');
+const cancelados = pedidos.filter(p => p.estado === 'cancelado');
+---
+
+<section class="size-full flex flex-col sm:flex-row justify-evenly items-center gap-2.5 text-white">
+  {[
+    { title: 'Pedidos Enviados', data: enviados },
+    { title: 'Pedidos Pendientes', data: pendientes },
+    { title: 'Pedidos Entregados', data: entregados },
+    { title: 'Pedidos Cancelados', data: cancelados },
+  ].map(({ title, data }) => (
+    <div class="w-[90%] sm:w-[20%] h-[300px] sm:h-[500px] bg-[#6f6f6f87] rounded-md flex flex-col items-center">
+      <h2 class="text-2xl font-bold">{title}</h2>
+      <div class="size-full p-2 overflow-y-auto no-scrollbar">
+        {data.length > 0 ? (
+          data.map((pedido) => (
+            <summary class="w-full h-auto p-2 mb-2 rounded-br-md bg-[#1e1e1e87]">
+              <h2 class="text-lg font-bold">ID: {pedido.idPedido}</h2>
+              <details>
+                <p>Fecha: {pedido.fecha}</p>
+                <p>Total: ${pedido.total}</p>
+                <p>Estado: {pedido.estado}</p>
+                <h2>Productos:</h2>
+                <ul class="flex flex-col gap-1 items-center">
+                  {pedido.productos.map(producto => (
+                    <li class="w-[90%] flex bg-[#6f6f6f90] p-2 rounded-md items-center gap-2">
+                      <img src={producto.image} alt={producto.name} class="w-[50px] h-[50px] object-contain" />
+                      <div class="flex flex-col text-sm">
+                        <span>{producto.name} - {producto.category}</span>
+                        <span>${producto.price}</span>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            </summary>
+          ))
+        ) : (
+          <p class="text-center mt-2">No hay pedidos</p>
+        )}
+      </div>
+    </div>
+  ))}
+</section>
