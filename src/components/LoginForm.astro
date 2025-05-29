@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import logo from '../../public/Img/Icons/logo.webp';
 ---
 
-<section class="login w-full max-w-md bg-[#00000098] rounded-2xl p-6 backdrop-blur-sm">
+<section class="login w-full max-w-md bg-[#2c2b2b98] rounded-2xl p-6 shadow-[0_0_15px_rgba(255,255,255,0.3)]">
   <a href="/" class="block">
     <div class="w-full flex items-center justify-center gap-4 mb-6">
       <Image src={logo} alt="Logo de Snackify" class="h-[60px] w-[60px]" />
@@ -16,12 +16,12 @@ import logo from '../../public/Img/Icons/logo.webp';
 
     <div class="w-full flex flex-col">
       <label for="email" class="text-xl text-white mb-1">Dirección de email</label>
-      <input type="email" id="email" required placeholder="example@gmail.com" class="p-2 w-full border-b border-white bg-transparent placeholder-[#89CFF0] text-white outline-none" />
+      <input type="email" id="email"placeholder="example@gmail.com" class="p-2 w-full border-b border-white bg-transparent placeholder-[#89CFF0] text-white outline-none" />
     </div>
 
     <div class="w-full flex flex-col">
       <label for="password" class="text-xl text-white mb-1">Contraseña</label>
-      <input type="password" id="password" required class="p-2 w-full border-b border-white bg-transparent text-white outline-none" />
+      <input type="password" id="password" class="p-2 w-full border-b border-white bg-transparent text-white outline-none" />
     </div>
 
     <div class="text-sm text-[#eee] w-full">
@@ -59,7 +59,7 @@ import logo from '../../public/Img/Icons/logo.webp';
   }
 </style>
 
-<script>
+<script lang="ts">
   document.querySelector('form').addEventListener('submit', function(event) {
   event.preventDefault();
   // Aquí puedes agregar tu lógica de validación si es necesario

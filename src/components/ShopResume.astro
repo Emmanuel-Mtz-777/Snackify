@@ -1,47 +1,151 @@
-<section class=" flex flex-col w-full min-h-[500px]">
-    <div id="cart-container" class="h-auto flex flex-row w-full"></div>
-</section>
-<button id="empty-cart-btn">Vaciar Carrito</button>
+---
+import userData from '../utils/userData';
+import type {User} from '../utils/userData';
+import UserOption from './UserOption.astro';
 
-<script>
+
+interface Props{
+    user?:User
+}
+const {user=userData}= Astro.props
+---
+
+
+<section class=" flex flex-col w-full h-screen sm:flex-row items-center justify-evenly py-2 ">
+    <div class="h-[400px] w-full flex flex-col items-center p-6 sm:w-[50%] rounded-2xl sm:h-[80%] bg-black/50">
+        <h2 class="text-3xl font-bold text-white my-2">Tus Productos</h2>
+        <div id="cart-container" class="w-full h-full flex flex-col overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none]"></div>
+    </div>
+    <div class="h-[450px] w-full flex flex-col items-center sm:w-[40%]  bg-black/50 rounded-2xl p-4">
+        <div class="w-[80%] h-[50px] flex justify-center items-center"> 
+            <h2 class="text-3xl font-bold text-white">Datos de la compra</h2>
+        </div>
+        <div class="w-[90%] h-[250px] text-white">
+            <ul class="text-xl font-medium p-4">
+                <li class="my-[5px]">Nombre: <span class="font-normal text-lg">{user.name}</span></li>
+                <li class="my-[5px]">Direccion: <span class="font-normal text-lg">{user.direccion}</span></li>
+                <li class="my-[5px]">Correo de contacto: <span class="font-normal text-lg">{user.email}</span></li>
+                <li class="my-[5px]">Targeta: <span class="font-normal text-lg">{user.tarjeta.numero}</span></li>
+                <li class="my-[5px]">Total de la compra: <span id="total-price" class="font-normal text-lg"></span></li>
+            </ul>
+        </div>
+        <div class="w-[80%] h-[50px] flex justify-between items-center"> 
+            <button id="empty-cart-btn" class=" border border-red-600 bg-red-600 text-white p-2 hover:bg-red-900 hover:border-red-900">Vaciar Carrito</button>
+            <button id="buy" class="border border-green-600 bg-green-600 text-white p-2 hover:bg-green-900 hover:border-green-900">Comprar</button>
+        </div>
+    
+    </div>
+</section>
+
+
+
+<script lang="ts">
+
 const cartContainer = document.getElementById("cart-container");
 const emptyCartBtn = document.getElementById("empty-cart-btn");
+const buy = document.getElementById("buy");
 
 const cart = JSON.parse(localStorage.getItem("cart")) || [];
+console.log("Carrito en localStorage:", localStorage.getItem("cart"));
+
 
 if (cart.length === 0) {
-    cartContainer.innerHTML = "<p>El carrito está vacío.</p>";
+    cartContainer.innerHTML = `
+    <div class="flex flex-col flex-1 items-center justify-center h-full">
+        <p class="text-5xl font-bold text-white text-center my-3.5">El carrito está vacío.</p>
+        <p class="text-3xl font-bold text-white text-center">Elige algun producto para proseguir.</p>
+    </div>
+`;
     emptyCartBtn.style.display = "none"; 
+    buy.style.display="none";
+
 } else {
 
     cart.forEach(product => {
-        const productDiv = document.createElement("div");
-            productDiv.innerHTML = `
-            <p>Nombre: ${product.name}</p>
-            <p>Categoría: ${product.category}</p>
-            <p>Precio: $${product.price}</p>
-            <p>Cantidad: ${product.quantity}</p>
-            <img src="${product.image}" alt="${product.name}" width="100" />
-            <hr />
-        `;
-        productDiv.classList.add("productsList");
-        cartContainer.appendChild(productDiv);
-        
+    const productDiv = document.createElement("div");
+    productDiv.classList.add("w-full", "h-auto", "flex", "items-center", "gap-4", "bg-[#282424]", "p-2", "rounded-xl", "shadow-md", "mb-4", "border", "[border-color:#444]", "text-white");
+
+    const imageDiv = document.createElement("div");
+    imageDiv.classList.add("w-24", "flex-shrink-0");
+    const img = document.createElement("img");
+    img.src = product.image;
+    img.alt = product.name;
+    img.classList.add("w-full", "rounded-md");
+    imageDiv.appendChild(img);
+    const infoDiv = document.createElement("div");
+    infoDiv.classList.add("flex", "flex-col");
+    const name = document.createElement("p");
+    name.textContent = `Nombre: ${product.name}`;
+    name.classList.add("font-semibold");
+    const category = document.createElement("p");
+    category.textContent = `Categoría: ${product.category}`;
+    const price = document.createElement("p");
+    price.textContent = `Precio: $${product.price}`;
+    const quantity = document.createElement("p");
+    quantity.textContent = `Cantidad: ${product.quantity}`;
+    infoDiv.appendChild(name);
+    infoDiv.appendChild(category);
+    infoDiv.appendChild(price);
+    infoDiv.appendChild(quantity);
+    productDiv.appendChild(imageDiv);
+    productDiv.appendChild(infoDiv);
+    cartContainer.appendChild(productDiv);
+});
+
+let totalPrice = document.getElementById('total-price');
+if(cart.length>0){
+    let total =0;
+    cart.forEach(product =>{
+        total +=product.price * product.quantity;
     });
+    if(totalPrice){
+        totalPrice.textContent=`${total.toFixed(2)}`;
+    }
+}
+
 }
 
 const emptyCart = () => {
     localStorage.removeItem("cart");
-    cartContainer.innerHTML = "<p>El carrito está vacío.</p>";
+    cartContainer.innerHTML = `
+    <div class="flex flex-col flex-1 items-center justify-center h-full">
+        <p class="text-5xl font-bold text-white text-center my-3.5">El carrito está vacío.</p>
+        <p class="text-3xl font-bold text-white text-center">Elige algun producto para proseguir.</p>
+    </div>
+`;
+
+    buy.style.display= "none";
     emptyCartBtn.style.display = "none";
+
+    const totalPrice = document.getElementById('total-price');
+    if(totalPrice) {
+        totalPrice.textContent = "0.00";
+    }
 };
 
 emptyCartBtn.addEventListener("click", emptyCart);
+
+buy.addEventListener('click',(e)=>{
+alert('Compra exitosa');
+
+localStorage.removeItem("cart");
+    cartContainer.innerHTML = `
+    <div class="flex flex-col flex-1 items-center justify-center h-full">
+        <p class="text-5xl font-bold text-white text-center my-3.5">El carrito está vacío.</p>
+        <p class="text-3xl font-bold text-white text-center">Elige algun producto para proseguir.</p>
+    </div>
+`;
+
+    buy.style.display= "none";
+    emptyCartBtn.style.display = "none";
+
+    const totalPrice = document.getElementById('total-price');
+    if(totalPrice) {
+        totalPrice.textContent = "0.00";
+        window.location.href='/'
+    }
+
+})
+
 </script>
 
-<style>
-    .productsList{
-        width: 100%;
-        background-color: aquamarine;
-    }
-</style>
